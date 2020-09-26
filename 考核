@@ -1,0 +1,22 @@
+def change(zi,pian):
+    num = ord(zi)
+    if num >= 97 and num <= 122:
+        num = 97 + ((num - 97) + pian) % 26
+    return chr(num)
+
+
+def kaisa(string,pian):
+    strings = ''
+    for a in string:
+        strings += change(a,pian)
+    print(strings)
+    return strings
+
+def main():
+        string = input('明文：')
+        num = int(input('偏移数：'))
+        kaisa(string,num)
+        main()
+
+if __name__ == '__main__':
+    main()
